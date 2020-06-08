@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+    <title>Dat19v1 ToDo Liste med API</title>
+</head>
+<body>
+<div class="container">
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">ToDo List Using API</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn" >Add</span>
+    </div>
+    <ul id="myUL">
+
+    </ul>
+
+</div>
+<script>
+    $(document).ready(readAll())
+
+    function readAll() {
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8080/todo/"
+        }).done(function (data) {
+            let element = $('#myUL')
+            element.empty();
+            for (let i = 0; i < data.length; i++) {
+                newLine(data[i].toDo, data[i].id);
+                console.log("Input kommer her!")
+            }
+        });
+    }
+
+
+    function deleteToDo(id) {
+        $.ajax({
+
+            method: "DELETE",
+            url: "http://localhost:8080/todo/" + id,
+
+        }).done(readAll())
+    }
+
+
+    function newElement() {
+        let text = $('#myInput').val();
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/todo/",
+            data: {toDo: text}
+
+        }).done(
+            readAll()
+        )
+    }
+
+    function newLine(toDo, id) {
+        let node = document.createElement("li")
+        let toDoText = document.createTextNode(toDo)
+        let deleteButton = document.createElement("button")
+
+        deleteButton.innerText = "X"
+        deleteButton.setAttribute("class", "close")
+        deleteButton.setAttribute("onClick", "deleteToDo(" + id + ")")
+        node.appendChild(toDoText)
+        node.appendChild(deleteButton)
+        document.getElementById("myUL").appendChild(node)
+    }
+</script>
+
+</body>
