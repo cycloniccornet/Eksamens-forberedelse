@@ -1,0 +1,32 @@
+<!-- Images taget fra pixabay.com-->
+<!--Denne HTML template er lavet ud fra https://www.youtube.com/watch?v=opbtRRSHGnk&t=440s -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/html5.css">
+</head>
+<body>
+
+<div class="contact-section">
+
+    <h1>Contact Us</h1>
+    <div class="border"></div>
+    <form class="contact-form" action="">
+        <input type="text" class="contact-form-text" placeholder="Your name" required autocomplete="off">
+        <input type="email" class="contact-form-text" placeholder="Your email" required autocomplete="off">
+        <input type="number" class="contact-form-text" placeholder="Age" required autocomplete="off">
+        <input type="tel" class="contact-form-text" placeholder="Your phone" required autocomplete="off"> <!-- tel har ikke en default pattern. add derfor en selv med pattern="[]"  Se eksempel Your msg-->
+        <input type="password" class="contact-form-text" placeholder="password" required autocomplete="off">
+
+        <input class="contact-form-text" placeholder="Your message" minlength="4" maxlength="500" required pattern="[Dd]ear|[Kk]ære"/>
+        <input href type="submit" class="contact-form-btn" value="Send">
+    </form>
+</div>
+
+
+</body>
+</html>

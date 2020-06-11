@@ -1,0 +1,65 @@
+<!-- Denne html template er lavet ud fra https://www.youtube.com/watch?v=XiGBjAheVeM -->
+<!-- Images taget fra pixabay.com-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Jquery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="accordion">
+    <div class="accordion-item">
+        <div class="item-header">
+            <h1 class="title">Hvilken race er en koala?</h1>
+            <div class="icon">+</div>
+        </div>
+        <p class="text">
+            Koalaen er et pungdyr, der lever i Australien. Koalaen er tidligere fejlagtigt blevet betegnet som "koalabjørn" eller "pungbjørn" da man, grundet dens ydre, førhen troede, den var en bjørn. Dette er dog ikke korrekt; koalaen er ikke en bjørneart men er pungdyr beslægtet med bl.a. kænguruen.
+        </p>
+    </div>
+
+    <div class="accordion-item">
+        <div class="item-header">
+            <h1 class="title">Hvor meget vejer en koala?</h1>
+            <div class="icon">+</div>
+        </div>
+        <p class="text">
+            Hunnen 6 til 11 kilo og hannen 8 til 14 kilo.
+    </div>
+
+    <div class="accordion-item">
+        <div class="item-header">
+            <h1 class="title">Hvor lever den?</h1>
+            <div class="icon">+</div>
+        </div>
+        <p class="text">
+            Eukalyptus-skovene i det østlige Australien.
+        </p>
+    </div>
+
+    <div class="accordion-item">
+        <div class="item-header">
+            <h1 class="title">Hvor længe lever den?</h1>
+            <div class="icon">+</div>
+        </div>
+        <p class="text">
+              Op til 20 år.
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /* $(selector).action() */
+    $(".item-header").click(function(){
+        $(".accordion-item").removeClass("active"); // Fjerner active fra nuværende klasse
+        $(this).parent().addClass("active"); //this refererer til den klasse der trykkes på.  parent() methoden returnere den direkte parent for den balgte klasse, altså class="accordion-item" og tilføjer active
+        $(".icon").text("+"); //text() methoden sætter eller retunerer text fældet af det valgte element. I dette tilfælde den nuværende aktive klasse
+        $(this).children(".icon").text("-"); //children() refererer til children klassen af parent, altså class = item-header.
+    });
+</script>
+</body>
+</html>

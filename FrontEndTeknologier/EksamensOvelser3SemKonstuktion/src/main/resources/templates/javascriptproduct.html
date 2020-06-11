@@ -1,0 +1,40 @@
+<!--Denne HTML template er lavet ud fra https://www.youtube.com/watch?v=7WwN7HpREBE -->
+<!-- Images taget fra pixabay.com-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript prize tag</title>
+    <link rel="stylesheet" type="text/css" href="/css/javascriptproduct.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="top-section">
+        <img id="img-container" src="../img/strawberry1.jpg" alt="">
+        <div class="nav">
+            <img onclick="changeImg(this)" src="../img/strawberry1.jpg" alt="">
+            <img onclick="changeImg(this)" src="../img/strawberry2.jpg" alt="">
+            <img onclick="changeImg(this)" src="../img/strawberry3.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="price">50kr</div>
+
+    <div class="product-info">
+        <div class="name">Øko Jordbær</div>
+        <div class="dis">Økologiske jordbær fra lokal gård i jylland. Uden E-numre</div>
+        <a class="btn" href="#">Add to Cart</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    let container = document.getElementById("img-container");
+    function changeImg(image) {
+        container.src = image.src;
+    }
+</script>
+
+
+</body>
+</html>

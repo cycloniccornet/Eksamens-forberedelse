@@ -1,0 +1,33 @@
+<!-- Denne Html template er taget fra https://www.youtube.com/watch?v=4XmhtbcMWEY -->
+<!-- Images taget fra pixabay.com-->
+<!DOCTYPE html>
+<!-- Import af thymeleag -->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://use.fontawesome.com/d1341f9b7a.js"></script>
+   <!-- <link href="/css/thymeleaf.css" rel="stylesheet" type="text/css"/> -->
+    <link th:href="@{/css/thymeleaf.css}" rel="stylesheet" type="text/css"/>
+    <title>Thymeleaf</title>
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="box">
+        <img class="box-img" src="img/Studiefoto.PNG" alt="" >
+        <h1 th:text="${user.firstnameAndLastname}"></h1>
+        <h5 th:text="${user.role}">Indsæt tag?</h5>
+        <p th:text="${user.comment}"></p>
+    </div>
+
+    <div class="box">
+        <img class="box-img" src="img/Ansigt%201.jpg" alt="" >
+        <h1 th:text="${tilde.firstnameAndLastname}" >Eksample 1</h1>
+        <h5 th:text="${tilde.role}">Indsæt tag?</h5>
+        <p th:text="${tilde.comment}"></p>
+    </div>
+
+    <a th:href="@{'/'}"> Go back</a>
+</div>
+</body>
+</html>

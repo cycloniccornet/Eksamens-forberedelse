@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Java script eksempel</title>
+    <link rel="stylesheet" type="text/css" href="/css/javascript.css">
+    <script src="/javascript/javascript%20example.js"> </script>
+</head>
+<body>
+<div class="content">
+    <h1>JavaScript Øvelser</h1>
+
+    <div class="container1">
+        <!-- Button der kalder på Element ud fra id "innerHTMl" og sætter dens innerHTML til tekst"-->
+        <button onclick="document.getElementById('innerHTML').innerHTML = 'This is inner HTML' ">What is inner HTML?</button>
+        <p id="innerHTML"></p>
+    </div>
+    <br>
+    <div class="container2">
+        <!-- samme som ovenstående men fra function"-->
+        <p id="innerHTMLFunction">What is this example?</p>
+        <button onclick="functionExample()">Find out!</button>
+    </div>
+    <br>
+    <div class="container3">
+        <input type="number" id="elementA" placeholder="Ex. 5">
+        <input type="number" id="elementB" placeholder="Ex. 7">
+        <br>
+        <button onclick="addition()">Get sum of a and b</button>
+        <br>
+        <br>
+        <br>
+        <div id="result-box"></div>
+    </div>
+    <br>
+    <div class="container4">
+        <button onclick="surprise()">Click me to reveal a secret!</button>
+        <p id="hiddenmsg" style="display:none">Jeg spiser koldskål som aftensmad</p>
+    </div>
+
+    <a class="link" th:href="@{/javascript/product}" >Praktiserende brug af javascript</a>
+</div>
+
+
+
+<script>
+    
+    function addition() {
+        const a = document.getElementById("elementA").value;
+        const b = document.getElementById("elementB").value;
+
+        const sum = parseInt(a) + parseInt(b);
+
+        document.getElementById("result-box").innerHTML = "The sum of a + b = " + sum;
+    }
+    
+    function functionExample() {
+        document.getElementById('innerHTMLFunction').innerHTML = 'This is a function example';
+    }
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

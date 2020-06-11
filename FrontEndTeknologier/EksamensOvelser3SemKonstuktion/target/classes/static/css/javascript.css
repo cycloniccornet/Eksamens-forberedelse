@@ -1,0 +1,82 @@
+body{
+    font-family: Bahnschrift, serif;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    position: relative;
+    background: url(../img/bg.jpg) no-repeat;
+}
+
+.content {
+    position: relative;
+    background:rgba(0,0,0,0.5);
+    border:5px solid black;
+    border-radius: 15px;
+    top:50px;
+    width:500px;
+    height:650px;
+    left:50%;
+    text-align:center;
+    transform: translate(-50%)
+}
+
+button{
+    background-color: #7fa6c7;
+    font-family: Bahnschrift, serif;
+    font-size:20px;
+    border: none;
+    color: #191818;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input {
+    position: relative;
+    background-color: #7fa6c7;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+::placeholder {
+    color:#00000066;
+}
+.container1 {
+    height: 100px;
+}
+
+.container2 {
+    height: 100px;
+}
+
+.container3 button {
+    position: relative;
+    top: 30px;
+}
+.container3 {
+    height: 100px;
+}
+
+.container4 {
+    position: relative;
+    top:30px;
+    height: 100px;
+}
+
+p{
+    color: aliceblue;
+}
+
+a {
+    position: relative;
+    top:30px;
+    font-size: larger;
+    color:aliceblue;
+    font-family: Bahnschrift, serif;
+}
